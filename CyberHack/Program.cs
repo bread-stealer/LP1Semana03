@@ -82,7 +82,10 @@ namespace CyberHack
                 case SystemType.MilitaryAI:
                 hacked = (zeroDay && aiOverride) && (backdoor || bruteForce) && (phishing || quantumExploit);
                 break;
-            }            
+            }
+
+        Console.WriteLine(hacked ? "System Hacked" : "System Secure");
+            
         }
     }
 }
