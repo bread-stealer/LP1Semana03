@@ -19,7 +19,7 @@ namespace ArrayMul
 
             if (args.Length != 6)
             {
-                Console.WriteLine("Provide exactly 6 arguments: arg1 arg 2 arg3 arg4 arg5 arg62");
+                Console.WriteLine("Provide exactly 6 arguments: arg1 arg 2 arg3 arg4 arg5 arg6");
                 return;
             }
 
