@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ArrayMul/ArrayMul.csproj" />
+  <Project Path="ChangeString/ChangeString.csproj" />
   <Project Path="RightSize/RightSize.csproj" />
 </Solution>
