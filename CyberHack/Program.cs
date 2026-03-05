@@ -63,7 +63,7 @@ namespace CyberHack
                 }
             }
 
-            bool hacked = False;
+            bool hacked = false;
 
             switch (system)
             {
@@ -71,20 +71,20 @@ namespace CyberHack
                 hacked = (phishing || backdoor) && (bruteForce || zeroDay);
                 break;
 
-                case System.BankDatabase:
+                case SystemType.BankDatabase:
                 hacked = (zeroDay && backdoor) || (quantumExploit && aiOverride);
                 break;
 
                 case SystemType.SmartCityCore:
-                hacked = (aiOverride && backdoor) || (zeroDay && bruteForce) !! (quantumExploit && phishing);
+                hacked = (aiOverride && backdoor) || (zeroDay && bruteForce) || (quantumExploit && phishing);
                 break;
 
                 case SystemType.MilitaryAI:
                 hacked = (zeroDay && aiOverride) && (backdoor || bruteForce) && (phishing || quantumExploit);
                 break;
             }
-
-        Console.WriteLine(hacked ? "System Hacked" : "System Secure");
+            
+            Console.WriteLine(hacked ? "System Hacked" : "System Secure");
             
         }
     }
