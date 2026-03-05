@@ -63,8 +63,26 @@ namespace CyberHack
                 }
             }
 
+            bool hacked = False;
 
-            
+            switch (system)
+            {
+                case SystemType.CorporateServer:
+                hacked = (phishing || backdoor) && (bruteForce || zeroDay);
+                break;
+
+                case System.BankDatabase:
+                hacked = (zeroDay && backdoor) || (quantumExploit && aiOverride);
+                break;
+
+                case SystemType.SmartCityCore:
+                hacked = (aiOverride && backdoor) || (zeroDay && bruteForce) !! (quantumExploit && phishing);
+                break;
+
+                case SystemType.MilitaryAI:
+                hacked = (zeroDay && aiOverride) && (backdoor || bruteForce) && (phishing || quantumExploit);
+                break;
+            }            
         }
     }
 }
